@@ -2,30 +2,20 @@ import sys
 import gym
 import torch
 import pylab
-#import random
 import numpy as np
 from collections import deque
 from datetime import datetime
 from copy import deepcopy
-#import torch.nn as nn
-#import torch.optim as optim
-#import torch.nn.functional as F
-#from torch.autograd import Variable
 from utils import find_max_lifes
 from utils import check_live
 from utils import get_frame
 from utils import get_init_state
 from agent import Agent
-#from agent import device
-#from model import *
 from config import EPISODES
 from config import evaluation_reward_length
 from config import render_breakout
 from config import train_frame
 from config import Update_target_network_frequency
-#%matplotlib inline
-#%load_ext autoreload
-#%autoreload 2
 
 
 env = gym.make('BreakoutDeterministic-v4')
@@ -61,7 +51,7 @@ for e in range(EPISODES):
 
         
         action = agent.get_action(np.float32(history[:, :4, :, :]) / 255.)
-        #print(action)
+       
         
         next_state, reward, done, info = env.step(action + 1)
 

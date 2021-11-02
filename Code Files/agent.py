@@ -97,7 +97,7 @@ class Agent():
         
         state_action_values = self.policy_net(states).gather(1,actions)
         
-        #print(state_action_values)
+     
         
         next_state_values = self.policy_net(next_states)
         
@@ -109,7 +109,7 @@ class Agent():
         
         
          
-        #max_next_state = torch.max(self.target_net(next_states)).item()
+        
         q_next_state=self.target_net(next_states)
         rewards=np.array(rewards)
         rewards = torch.from_numpy(rewards).double()
@@ -124,9 +124,9 @@ class Agent():
                 
         
         
-        #expected_state_action_values = (max_next_state * self.discount_factor) + rewards
         
-        #print(expected_state_action_values)
+        
+        
         expected_state_action_values=np.asarray(expected_state_action_values)
         expected_state_action_values=expected_state_action_values.reshape((32,1))
         expected_state_action_values=expected_state_action_values.tolist()

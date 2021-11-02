@@ -6,4 +6,4 @@ In this project, I used Deep Reinforcement Learning approaches to play Breakout 
 
 ## How to run the code
 
-First, download the code files in the "Code File" folder, Then run the "final.py" python file.
+First, download the code files in the "Code Files" folder, Then run the "final.py" python file.

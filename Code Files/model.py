@@ -16,9 +16,7 @@ class DQN(nn.Module):
         self.head = nn.Linear(512, action_size)
 
     def forward(self, x):
-        #print(x)
         x = torch.from_numpy(numpy.array(x))
-        #x.view(x.size(0),-1)
         x = F.relu(self.bn1(self.conv1(x)))
         x = F.relu(self.bn2(self.conv2(x)))
         x = F.relu(self.bn3(self.conv3(x)))
